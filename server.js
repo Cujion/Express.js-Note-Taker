@@ -30,7 +30,7 @@ app.post('/api/notes', (req, res) => {
     console.log('request received to add a new note');
     
     const { title, text } = req.body;
-    
+
     if (title && text) {
         const newNote = {
             title,
@@ -48,7 +48,7 @@ app.post('/api/notes', (req, res) => {
         err
           ? console.error(err)
           : console.log(
-              `Review for ${newNote.title} has been written to JSON file`
+              `${newNote.title} has been written to JSON file`
             )
       );
       const response = {

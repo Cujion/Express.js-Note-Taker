@@ -26,7 +26,42 @@ app.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'db/db.json'))
 });
 
+app.post('/api/notes', (req, res) => {
+    console.log('request received to add a new note');
+    
+    const { title, text } = req.body;
+    
+    if (title && text) {
+        const newNote = {
+            title,
+            text,
+            noteID: uuid(),
+        };
+        const readNotes = fs.readFileSync(`./db/db.json`, 'utf8');
+        const parsedNote = JSON.parse(readNotes);
 
+        parsedNote.push(newNote);
+
+        const newNoteString = JSON.stringify(parsedNote, null, 2);
+
+        fs.writeFile(`./db/db.json`, newNoteString, (err) =>
+        err
+          ? console.error(err)
+          : console.log(
+              `Review for ${newNote.title} has been written to JSON file`
+            )
+      );
+      const response = {
+        status: 'success',
+        body: newNote,
+      };
+  
+      console.log(response);
+      res.status(201).json(response);
+    } else {
+      res.status(500).json('Error in posting new note');
+    }
+})
 
 
 

@@ -27,7 +27,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.post('/api/notes', (req, res) => {
-    console.log('request received to add a new note');
+    console.info('request received to add a new note');
     
     const { title, text } = req.body;
 
@@ -46,8 +46,8 @@ app.post('/api/notes', (req, res) => {
 
         fs.writeFile(`./db/db.json`, newNoteString, (err) =>
         err
-          ? console.error(err)
-          : console.log(
+          ? console.err(err)
+          : console.info(
               `${newNote.title} has been written to JSON file`
             )
       );

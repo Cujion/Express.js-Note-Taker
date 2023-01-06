@@ -13,7 +13,11 @@
 * This application is an Express.js application that can be used to write and save notes. then will use Express.js back end to save and retrieve note data from a JSON file. This app will help break down the basics of how back end applications are setup to communicate with the front end in order to make a dynamic webpage. upon deployment of this application you will be presented with the homepage with a button to get started. once clicked it will take you to the note taker page where you can start writing notes with a title for the note along with the description. Then once both fields have been filled out a save icon will appear in the upper right hand corner to save the note in the left hand column. If you do not need a specific note anymore simply click the red trash icon next to that note and the note will be deleted. 
 
 ## Visuals
-
+https://drive.google.com/file/d/1VX7Wc4Tcdj2mZ30TiGReLkOSc_jz3ybN/view
+![Homepage](./Assets/images/homepage.png)
+![Notes default](./Assets/images/notes-default.png)
+![Saved notes](./Assets/images/saved-notes.png)
+![Deleted notes](./Assets/images/deleted-note.png)
 
 ## License
 * MIT License

@@ -28,27 +28,25 @@ router.get('/api/notes', (req, res) => {
       const newNoteString = JSON.stringify(parsedNote, null, 2);
     // Writing newNote to db.json file
       fs.writeFileSync(`./db/db.json`, newNoteString);
-      const response = {
-        status: 'success',
+      const response = console.info({
+        status: 'Successful', 
         body: newNote,
-      };
-  
-      console.log(response);
-      res.status(201).json(response);
+      });
+      res.json(response);
     } else {
-      res.status(500).json('Error in posting new note');
+      res.json('Error in posting new note');
     }
   })
-// Deleting specified note if red trash can icon is clicked
+// Process to delete selected note with corresponding id
   router.delete('/api/notes/:id', (req, res) => {
-    for (i = 0; i < notes.length; i++) {
-      if (notes[i].id == req.params.id) {
-        notes.splice(notes[i], 1);
-      }
-    }
-    // Updating new notes after specified note is deleted
-    fs.writeFileSync('./db/db.json', JSON.stringify(notes, null, 2))
-    res.json(notes);
-  });
+    console.info('request received to delete selected note');
+    const readNotes = fs.readFileSync(`./db/db.json`, 'utf8');
+        const parsedNotes = JSON.parse(readNotes);
+        const updatedNotes = parsedNotes.filter((notes) => notes.id !== req.params.id);
+        // Update db.json after selected note has been deleted
+        fs.writeFileSync('./db/db.json', JSON.stringify(updatedNotes, null, 2))
+        const response = console.info(`Note with id ${req.params.id} has been deleted!`);
+        res.json(response);
+})
 
   module.exports = router;

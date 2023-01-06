@@ -1,5 +1,6 @@
 # Express.js-Note-Taker
 
+[Link to my profile](https://github.com/cujion)
 [Link to Heroku deployed page](https://murmuring-forest-94030.herokuapp.com/)
 
 ## Table of Contents

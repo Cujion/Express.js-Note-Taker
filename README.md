@@ -14,10 +14,10 @@
 
 ## Visuals
 https://drive.google.com/file/d/1VX7Wc4Tcdj2mZ30TiGReLkOSc_jz3ybN/view
-![Homepage](./Assets/images/homepage.png)
-![Notes default](./Assets/images/notes-default.png)
-![Saved notes](./Assets/images/saved-notes.png)
-![Deleted notes](./Assets/images/deleted-note.png)
+![Homepage](./assets/images/homepage.png)
+![Notes default](./assets/images/notes-default.png)
+![Saved notes](./assets/images/saved-notes.png)
+![Deleted notes](./assets/images/deleted-note.png)
 
 ## License
 * MIT License
